@@ -1,11 +1,17 @@
 import React from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Login from './Pages/Login'
+
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/register' component={Login}></Route>
+        <Route path='/' component={Login}></Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
