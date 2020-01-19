@@ -65,7 +65,7 @@ class Register extends React.Component{
         return(
             <div className="login-div">
             <div className="login-div-content">
-                <h1 className="login-title">Anonym</h1>
+                <h1 className="login-title">Anonomy</h1>
                 <label class="field a-field a-field_a1">
                     <input class="field__input a-field__input" placeholder="Enter Your Email..." required/>
                     <span class="a-field__label-wrap">

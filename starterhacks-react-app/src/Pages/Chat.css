@@ -1,36 +1,19 @@
-.mission-text{
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 59px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #FFFFFF;
-}
-
-.mission-div{
-    width: 70%;
+.chat-div{
+    width: 900px;
+    height: 550px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-end;
+}
+.chatinputs-bar{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
 }
 
-
-
-
-
-
-.wrap {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
   
-  .button {
+  .buttonn {
+    margin-left: 20px;
     width: 130px;
     height: 40px;
     font-family: 'Nunito', sans-serif;
@@ -42,7 +25,7 @@
     background: linear-gradient(90deg, #CF92FF 0%, #CF92FF 100%);
     border: none;
     border-radius: 1000px;
-    box-shadow: 5px 5px 24px #CF92FF;
+    box-shadow: 3px 3px 24px #CF92FF;
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
@@ -50,27 +33,14 @@
     padding: 10px;
     }
   
-  .button::before {
-    content: '';
-    border-radius: 1000px;
-    width: calc(130px + 12px);
-    height: calc(40px + 12px);
-    border: 4px solid #CF92FF;
-    box-shadow: 0 0 30px #CF92FF;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .3s ease-in-out 0s;
-  }
+
   
-  .button:hover, .button:focus {
+  .buttonn:hover, .button1:focus {
     color: #313133;
     transform: translateY(-6px);
   }
   
-  .button:hover::before, .button:focus::before {
+  .buttonn:hover::before, .button1:focus::before {
     opacity: 1;
   }
   
@@ -90,3 +60,5 @@
     display: none;
   }
   
+
+

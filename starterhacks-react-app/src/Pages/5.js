@@ -46,13 +46,13 @@ class five extends React.Component{
             <div className="therapist-settings">
                 <div className="therapist-title">Enter Your Credentials</div>
                 <label class="field a-field a-field_a1">
-                    <input class="field__input a-field__input" placeholder="Enter Your First Name..." required type="password"/>
+                    <input class="field__input a-field__input" placeholder="Enter Your First Name..." required />
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">First Name</span>
                     </span>
                 </label>
                 <label class="field a-field a-field_a1">
-                    <input class="field__input b-field__input" placeholder="Enter Your Last Name..." required type="password"/>
+                    <input class="field__input a-field__input" placeholder="Enter Your Last Name..." required />
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">Last Name</span>
                     </span>
