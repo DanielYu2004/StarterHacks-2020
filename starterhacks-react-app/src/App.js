@@ -9,6 +9,7 @@ import Loggedin from './Pages/Loggedin'
 import one from './Pages/1'
 import two from './Pages/2'
 import three from './Pages/3';
+import ChatBox from './Pages/Chat';
 
 
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
                 <Route exact path='/3' component={three}></Route>
                 <Route exact path='/4' component={one}></Route>
                 <Route path="/register" component={Loggedin}></Route>
+                <Route path="/Chat" component={ChatBox}></Route>
               </Switch>
             </div>
             : 
