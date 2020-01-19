@@ -6,3 +6,16 @@
     font-size: 28px;
     line-height: 59px;
 }
+
+
+.three-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.therapist-div{
+    display: flex;
+    
+}
