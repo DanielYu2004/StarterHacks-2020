@@ -1,0 +1,162 @@
+.one-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 59px;
+
+    color: #FFFFFF;
+}
+
+.one-div{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+height: 400px;
+justify-content: center;
+}
+
+
+
+
+.wrap1 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button1 {
+    width: 130px;
+    height: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #313133;
+    background: #AAFFAD;
+    background: linear-gradient(90deg, #AAFFAD 0%, #AAFFAD 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 3px 3px 24px #AAFFAD;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+
+  
+  .button1:hover, .button1:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  .button1:hover::before, .button1:focus::before {
+    opacity: 1;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+
+  .one-buttons{
+      display: flex;
+      width: 400px;
+      justify-content: space-evenly;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .wrap11 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button11 {
+    width: 130px;
+    height: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #313133;
+    background: #FF9A9A;
+    background: linear-gradient(90deg, #FF9A9A 0%, #FF9A9A 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 3px 3px 24px #FF9A9A;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+
+  
+  .button11:hover, .button1:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  .button11:hover::before, .button1:focus::before {
+    opacity: 1;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+
+  .one-buttons{
+      display: flex;
+      width: 400px;
+      justify-content: space-evenly;
+  }

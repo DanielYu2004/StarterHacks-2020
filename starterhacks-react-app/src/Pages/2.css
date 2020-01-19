@@ -1,0 +1,24 @@
+.one-title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 59px;
+    color: #FFFFFF;
+    width: 100vw;
+}
+.one-title p{
+    margin-left: 50px;
+}
+
+.symptoms-div{
+    width: 90%;
+    height: 400px;
+    background: blue;
+}
+.two-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

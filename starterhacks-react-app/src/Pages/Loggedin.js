@@ -7,7 +7,7 @@ class Loggedin extends React.Component{
         return(
             <div className="mission-div">
                 <div className="mission-text">the quick brown fox jumps over the lazy dog</div>
-                <Link to="/1">
+                <Link to="/1" style={{ textDecoration: 'none', color: 'white' }}>
                     <div class="wrap">
                             <button class="button" onClick={this.login}>Lets Go</button>
                     </div>
