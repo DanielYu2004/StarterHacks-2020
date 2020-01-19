@@ -43,13 +43,13 @@ class Register extends React.Component{
                     </span>
                 </label>
                 <label class="field a-field a-field_a1">
-                    <input class="field__input a-field__input" placeholder="Reenter Your Password..." required/>
+                    <input class="field__input a-field__input" placeholder="Re-enter Your Password..." required/>
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">Confirm Password</span>
                     </span>
                 </label>
                 <Link to="/login" style={{ textDecoration: 'none', color: 'white', fontSize: '15px' }} className="register-link-button"> Back to Login</Link>
-                <div class="wrap" /*onClick={() => this.props.register('hi@gmail.com', 'fuck')}*/>
+                <div class="wrap" /*onClick={() => this.props.register('hi@gmail.com', 'duck')}*/>
                     <button class="button" onClick={this.signup}>Submit</button>
                 </div>
             </div>

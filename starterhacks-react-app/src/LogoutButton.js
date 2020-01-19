@@ -18,6 +18,7 @@ class LogoutButton extends React.Component{
             // An error happened.
           });
     }
+    
     render(){
         return(
             <div>

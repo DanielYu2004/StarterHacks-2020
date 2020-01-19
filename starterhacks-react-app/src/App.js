@@ -5,6 +5,7 @@ import Register from './Pages/Register';
 import './App.css';
 import fire from './Fire.js'
 import LogoutButton from './LogoutButton.js'
+import ChatBox from "./Pages/Chat";
 
 class App extends Component {
   constructor() {
@@ -37,11 +38,12 @@ class App extends Component {
         <BrowserRouter>
             {this.state.user ? 
             <div> logged in </div> : 
+            <ChatBox uid={this.state.user.uid} ></ChatBox>>
             <Switch>
               <Route path='/register' component={Register}></Route>
               <Route path='/' component={Login}></Route>
             </Switch>
-            }
+            } 
         </BrowserRouter>
         <LogoutButton></LogoutButton>
       </div>
