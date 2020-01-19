@@ -7,6 +7,9 @@ import fire from './Fire.js'
 import LogoutButton from './LogoutButton.js'
 import Loggedin from './Pages/Loggedin'
 import one from './Pages/1'
+import two from './Pages/2'
+
+
 class App extends Component {
   constructor() {
     super();
@@ -42,6 +45,9 @@ class App extends Component {
               <LogoutButton></LogoutButton>
               <Switch>
                 <Route exact path='/1' component={one}></Route>
+                <Route exact path='/2' component={two}></Route>
+                <Route exact path='/3' component={one}></Route>
+                <Route exact path='/4' component={one}></Route>
                 <Route path="/register" component={Loggedin}></Route>
               </Switch>
             </div>
