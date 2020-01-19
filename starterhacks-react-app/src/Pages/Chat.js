@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import './Login.css';
 import fire from '../Fire';
 
 class ChatBox extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            otherUid: "",
+            otherUid: "5pGqew3j3thWoXiNsrNphskRF2o2",
             incoming: [],
             outgoing: []
         };
@@ -39,7 +40,8 @@ class ChatBox extends React.Component {
         console.log(this.state.outoing, "outgoing");
         return(
             <div>
-
+                <input class="field__input a-field__input" placeholder="Enter Your Password..." required/>
+                <button class="button" onClick={this.message}>Submit</button>
             </div>
         );
     }

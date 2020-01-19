@@ -39,7 +39,6 @@ class App extends Component {
             {this.state.user ? 
             <div> logged in </div> : 
             <div>
-              <ChatBox></ChatBox>
               <Switch>
                 <Route path='/register' component={Register}></Route>
                 <Route path='/' component={Login}></Route>
