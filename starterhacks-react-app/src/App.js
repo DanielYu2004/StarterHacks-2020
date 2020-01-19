@@ -4,6 +4,7 @@ import Login from './Pages/Login'
 import Register from './Pages/Register';
 import './App.css';
 import fire from './Fire.js'
+import LogoutButton from './LogoutButton.js'
 
 class App extends Component {
   constructor() {
@@ -42,6 +43,7 @@ class App extends Component {
             </Switch>
             }
         </BrowserRouter>
+        <LogoutButton></LogoutButton>
       </div>
     );
   }

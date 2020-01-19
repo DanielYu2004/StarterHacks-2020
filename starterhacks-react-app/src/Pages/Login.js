@@ -15,7 +15,9 @@ class Login extends React.Component{
 
     login(e) {
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        var Email = document.getElementsByClassName('field__input a-field__input')[0].value;
+        var Password = document.getElementsByClassName('field__input a-field__input')[0].value;
+        fire.auth().signInWithEmailAndPassword(Email, Password).then((u)=>{
         }).catch((error) => {
             console.log(error);
           });
@@ -39,7 +41,7 @@ class Login extends React.Component{
                 </label>
                     <Link to="/register" style={{ textDecoration: 'none', color: 'white', fontSize: '15px' }} className="register-link-button"> Register</Link>
                     <div class="wrap">
-                        <button class="button">Submit</button>
+                        <button class="button" onClick={this.login}>Submit</button>
                     </div>
                 </div>
             </div>

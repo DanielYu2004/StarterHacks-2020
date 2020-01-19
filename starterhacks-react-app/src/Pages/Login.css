@@ -218,7 +218,7 @@
     padding: 10px;
     }
   
-  button::before {
+  .button::before {
     content: '';
     border-radius: 1000px;
     width: calc(130px + 12px);
@@ -238,7 +238,7 @@
     transform: translateY(-6px);
   }
   
-  button:hover::before, button:focus::before {
+  .button:hover::before, .button:focus::before {
     opacity: 1;
   }
   
