@@ -1,11 +1,8 @@
 import React from 'react';
+import fire from "../Fire";
 
 class three extends React.Component{
-    render(){
-        return(
-            <div></div>
-        )
-    }
+    
 }
 
 export default three

@@ -8,6 +8,7 @@ import LogoutButton from './LogoutButton.js'
 import Loggedin from './Pages/Loggedin'
 import one from './Pages/1'
 import two from './Pages/2'
+import three from './Pages/3';
 
 
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
               <Switch>
                 <Route exact path='/1' component={one}></Route>
                 <Route exact path='/2' component={two}></Route>
-                <Route exact path='/3' component={one}></Route>
+                <Route exact path='/3' component={three}></Route>
                 <Route exact path='/4' component={one}></Route>
                 <Route path="/register" component={Loggedin}></Route>
               </Switch>
