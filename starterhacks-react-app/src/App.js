@@ -26,7 +26,7 @@ class App extends Component {
     fire.auth().onAuthStateChanged((user) => {
       console.log(user);
       if (user) {
-        this.setState({ user });
+        this.setState({user: user});
         localStorage.setItem('user', user.uid);
       } else {
         this.setState({ user: null });

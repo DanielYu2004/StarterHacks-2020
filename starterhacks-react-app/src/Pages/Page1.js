@@ -1,4 +1,5 @@
 import React from 'react';
+import fire from "../Fire";
 
 class Page1 extends React.Component{
     constructor (props) {
@@ -16,8 +17,8 @@ class Page1 extends React.Component{
         var message = document.getElementsByClassName('message')[0].value;
 
         var updates = {};
-        updates["users/" + this.state.uid + "/chatlog"] = fire.database().ref("users/"+this.state.uid+"/chatlog").push(message)
-        updates["users/" + this.state.otherUid + "/chatlog"] = fire.database().ref("users/"+this.state.otherUid+"/chatlog").push(message)
+        updates["users/" + this.state.uid + "/chatlog"] = fire.database().ref("users/"+this.state.uid+"/chatlog").push(message);
+        updates["users/" + this.state.otherUid + "/chatlog"] = fire.database().ref("users/"+this.state.otherUid+"/chatlog").push(message);
 
         fire.database().ref().update(updates);
 
@@ -53,7 +54,7 @@ class Page1 extends React.Component{
             }
         });
           
-        console.log(this.state.messages, "messages");
+        // console.log(this.state.messages, "messages");
         return(
             <div>
                 <input class="message" placeholder="Enter Your Message..." required/>
