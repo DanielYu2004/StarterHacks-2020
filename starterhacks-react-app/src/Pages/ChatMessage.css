@@ -1,0 +1,7 @@
+.message-div{
+    min-width: 40px;
+    min-height: 30px;
+    width: fit-content;
+    height: fit-content;
+    background: red;
+}

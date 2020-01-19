@@ -3,13 +3,29 @@
     height: 550px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
+    background: blue;
 }
 .chatinputs-bar{
     display: flex;
     width: 100%;
     justify-content: flex-end;
 }
+
+.messages-chat-div{
+    width: 80%;
+    height: 90%;
+    background: purple;
+    align-self: center;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+
+
 
   
   .buttonn {
@@ -60,5 +76,14 @@
     display: none;
   }
   
+
+  .message{
+      width: 700px;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        border-radius: 10px;
+        outline: none;
+  }
 
 

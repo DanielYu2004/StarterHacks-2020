@@ -55,8 +55,8 @@ class ThreeCard extends React.Component{
         return(
             <div className="therapist-card">
                 <div className="therapist-pfp"></div>
-                <div className="therapist-name">{name}</div>
-                <div className="therapist-bio">{bio}</div>
+                <div className="therapist-name">{this.props.name}</div>
+                <div className="therapist-bio">{this.props.bio}</div>
                 <div class="wrap3">
                     <Link to="/Chat">
                         <button class="button3" onClick={this.login}>Chat</button>
