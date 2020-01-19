@@ -46,14 +46,15 @@ class ThreeCard extends React.Component{
         therapistRef.child("bio").once("value", value => {
             bio = value;
         });
-        document.getElementsByClassName("therapist-pfp").value = pfp;
-        document.getElementsByClassName("therapist-name").value = name;
-        document.getElementsByClassName("therapist-bio").value = bio;
+
+        //document.getElementsByClassName("therapist-pfp").value = pfp;
+        //document.getElementsByClassName("therapist-name").value = name;
+        //document.getElementsByClassName("therapist-bio").value = bio;
         return(
             <div className="therapist-card">
                 <div className="therapist-pfp"></div>
-                <div className="therapist-name">Daniel Yu</div>
-                <div className="therapist-bio">I love long walks on the beach with my lovely doggos</div>
+                <div className="therapist-name">{name}</div>
+                <div className="therapist-bio">{bio}</div>
                 <div class="wrap3">
                     <Link to="/Chat">
                         <button class="button3" onClick={this.login}>Chat</button>
