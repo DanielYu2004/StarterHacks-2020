@@ -8,7 +8,7 @@ class ChatBox extends React.Component {
         super(props);
         this.send = this.send.bind(this);
         this.state = {
-            otherUid: "IYyxNyzMS2fEV2VppTXB9fiOmYR2",
+            otherUid: "",
             uid: "",
             messages: []
         };
@@ -31,6 +31,7 @@ class ChatBox extends React.Component {
                 });
             }
         }
+        this.setState({otherUid: fire.database().ref("users/" + possibleUid + "/therapist").val()});
     }
 
     send(e) {
