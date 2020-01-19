@@ -16,16 +16,15 @@ class five extends React.Component{
         if (!uid) {
             console.log("uid doesn't work")
         }
-        var therapistsname = document.getElementsByClassName("feild__input a-field__input").value + ' ' + 
-                   document.getElementsByClassName("field__input b-field__input").value;
-        var therapistbio = document.getElementsByClassName("therapist-bio-div").value;
-        var newValue = {}
-        fire.database().ref("users/" + uid).once("value", value => {
-            newValue = value
-            newValue['bio'] = therapistbio;
-            newValue['name'] = therapistsname;
-        });
-        fire.database().ref("users/" + uid).set(newValue);
+        var therapistsname = document.getElementsByClassName("field__input a-field__input")[0].value + ' ' + document.getElementsByClassName("field__input a-field__input")[1].value;
+        var therapistbio = document.getElementsByClassName("therapist-bio-div")[0].value;
+        fire.database().ref("users/" + uid + "/name").set(therapistsname);
+        fire.database().ref("users/" + uid + "/bio").set(therapistbio);
+        // console.log(newValue)
+        // fire.database().ref("users/" + uid).set(newValue);
+        // fire.database().ref("users/" + uid).once("value", value => {
+        //     console.log(value)
+        
 
         fire.database().ref('users/therapists').once('value').then(function(snapshot) {
             var prevTherapists = (snapshot.val())
@@ -35,7 +34,7 @@ class five extends React.Component{
             } 
             console.log(prevTherapists, "is the prev messages")
             prevTherapists.push(uid)
-            fire.database().ref('users/therapists').update({
+            fire.database().ref('users').update({
                 therapists: prevTherapists
             });
         });

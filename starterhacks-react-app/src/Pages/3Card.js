@@ -8,7 +8,7 @@ class ThreeCard extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            therapistUid: props.uid
+            therapistUid: this.props.uid
         }
         this.chat = this.chat.bind(this);
     }
@@ -36,6 +36,9 @@ class ThreeCard extends React.Component{
     }
 
     render(){
+        if (!this.state.therapistUid) {
+            return (<div></div>)
+        }
         var pfp = null;
         var name = null;
         var bio = null;
@@ -46,10 +49,9 @@ class ThreeCard extends React.Component{
         therapistRef.child("bio").once("value", value => {
             bio = value;
         });
-
-        //document.getElementsByClassName("therapist-pfp").value = pfp;
-        //document.getElementsByClassName("therapist-name").value = name;
-        //document.getElementsByClassName("therapist-bio").value = bio;
+        // document.getElementsByClassName("therapist-pfp").value = pfp;
+        // document.getElementsByClassName("therapist-name").value = name;
+        // document.getElementsByClassName("therapist-bio").value = bio;
         return(
             <div className="therapist-card">
                 <div className="therapist-pfp"></div>
