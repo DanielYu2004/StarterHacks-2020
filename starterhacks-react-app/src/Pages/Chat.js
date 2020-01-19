@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Login.css';
 import fire from '../Fire';
+import './Chat.css'
+
 
 class ChatBox extends React.Component {
     constructor (props) {
@@ -92,8 +94,12 @@ class ChatBox extends React.Component {
         return(
             <div>
                 <text text={this.state.messages}></text>
-                <input class="message" placeholder="Enter Your Message..." required/>
-                <button class="button" onClick={this.send}>send</button>
+                <div className="chat-div">
+                    <div className="chatinputs-bar">
+                        <input class="message" placeholder="Enter Your Message..." required/>
+                        <button class="buttonn" onClick={this.send}>send</button>
+                    </div>
+                </div>
             </div>
         );
     }
