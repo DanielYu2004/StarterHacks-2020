@@ -20,7 +20,7 @@ class ChatBox extends React.Component {
         try {
             var possibleUid = localStorage.getItem("user");
         } catch {
-            var possibleUid = '';
+            console.log("can't find user id in chat init")
         } finally {
             if (possibleUid !== '') {
                 fire.database().ref("users/" + possibleUid).once("value", user => {
