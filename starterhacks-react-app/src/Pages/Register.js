@@ -16,14 +16,21 @@ class Register extends React.Component{
     signup(e){
     e.preventDefault();
     var Email = document.getElementsByClassName('field__input a-field__input')[0].value;
-    var Password = document.getElementsByClassName('field__input a-field__input')[0].value;
+    var Password = document.getElementsByClassName('field__input a-field__input')[1].value;
+    var Password2 = document.getElementsByClassName('field__input a-field__input')[2].value;
 
+    if (Password == Password2){
+        fire.auth().createUserWithEmailAndPassword(Email, Password).then((u)=>{
+        }).then((u)=>{console.log(u)})
+        .catch((error) => {
+            console.log(error);
+            alert(error)
+            })
+    }else{
+        alert("Passwords don't match");
+        console.log(Password, Password2)
+    }
 
-    fire.auth().createUserWithEmailAndPassword(Email, Password).then((u)=>{
-    }).then((u)=>{console.log(u)})
-    .catch((error) => {
-        console.log(error);
-        })
     }
     render(){
         return(
@@ -37,13 +44,13 @@ class Register extends React.Component{
                     </span>
                 </label>
                 <label class="field a-field a-field_a1">
-                    <input class="field__input a-field__input" placeholder="Enter Your Password..." required/>
+                    <input class="field__input a-field__input" placeholder="Enter Your Password..."  type="password" required/>
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">Password</span>
                     </span>
                 </label>
                 <label class="field a-field a-field_a1">
-                    <input class="field__input a-field__input" placeholder="Reenter Your Password..." required/>
+                    <input class="field__input a-field__input" placeholder="Reenter Your Password..."  type="password" required/>
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">Confirm Password</span>
                     </span>

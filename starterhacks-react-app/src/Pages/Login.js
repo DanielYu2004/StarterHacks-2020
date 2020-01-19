@@ -16,10 +16,12 @@ class Login extends React.Component{
     login(e) {
         e.preventDefault();
         var Email = document.getElementsByClassName('field__input a-field__input')[0].value;
-        var Password = document.getElementsByClassName('field__input a-field__input')[0].value;
+        var Password = document.getElementsByClassName('field__input a-field__input')[1].value;
         fire.auth().signInWithEmailAndPassword(Email, Password).then((u)=>{
         }).catch((error) => {
             console.log(error);
+            alert(error)
+
           });
     }
     render(){
@@ -34,7 +36,7 @@ class Login extends React.Component{
                         </span>
                     </label>
                     <label class="field a-field a-field_a1">
-                    <input class="field__input a-field__input" placeholder="Enter Your Password..." required/>
+                    <input class="field__input a-field__input" placeholder="Enter Your Password..." required type="password"/>
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">Password</span>
                     </span>
