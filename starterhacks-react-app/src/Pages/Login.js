@@ -1,8 +1,25 @@
 import React from 'react';
 import './Login.css'
 import {Link} from 'react-router-dom'
+import fire from '../Fire';
 
 class Login extends React.Component{
+    constructor(props) {
+        super(props);
+        this.login = this.login.bind(this);
+        this.state = {
+          email: '',
+          password: ''
+        };
+      }
+
+    login(e) {
+        e.preventDefault();
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        }).catch((error) => {
+            console.log(error);
+          });
+    }
     render(){
         return(
             <div className="login-div">
@@ -20,7 +37,7 @@ class Login extends React.Component{
                     <span class="a-field__label">Password</span>
                     </span>
                 </label>
-                    <Link to="/register"> hi</Link>
+                    <Link to="/register" style={{ textDecoration: 'none', color: 'white', fontSize: '15px' }} className="register-link-button"> Register</Link>
                     <div class="wrap">
                         <button class="button">Submit</button>
                     </div>
