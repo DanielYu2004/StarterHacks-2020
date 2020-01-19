@@ -1,5 +1,7 @@
 import React from 'react';
 import './5.css'
+import {Link} from 'react-router-dom'
+import fire from "../Fire";
 
 
 class five extends React.Component{
@@ -8,6 +10,36 @@ class five extends React.Component{
         var file = (event.target.files)
         console.log(file)
     }
+
+    submit(){
+        var uid = localStorage.getItem("user")
+        if (!uid) {
+            console.log("uid doesn't work")
+        }
+        var therapistsname = document.getElementsByClassName("feild__input a-field__input").value + ' ' + 
+                   document.getElementsByClassName("field__input b-field__input").value;
+        var therapistbio = document.getElementsByClassName("therapist-bio-div").value;
+        var newValue = {}
+        fire.database().ref("users/" + uid).once("value", value => {
+            newValue = value
+            newValue['bio'] = therapistbio;
+            newValue['name'] = therapistsname;
+        });
+        fire.database().ref("users/" + uid).set(newValue);
+
+        fire.database().ref('users/therapists').once('value').then(function(snapshot) {
+            var prevTherapists = (snapshot.val())
+            // console.log(prevMessages)
+            if (typeof (prevMessages) != Array){
+                prevTherapists = []
+            } 
+            console.log(prevTherapists, "is the prev messages")
+            prevTherapists.push(uid)
+            fire.database().ref('users/therapists').update({
+                therapists: prevTherapists
+            });
+        });
+    }   
 
     render(){
         return(
@@ -20,14 +52,16 @@ class five extends React.Component{
                     </span>
                 </label>
                 <label class="field a-field a-field_a1">
-                    <input class="field__input a-field__input" placeholder="Enter Your Last Name..." required type="password"/>
+                    <input class="field__input b-field__input" placeholder="Enter Your Last Name..." required type="password"/>
                     <span class="a-field__label-wrap">
                     <span class="a-field__label">Last Name</span>
                     </span>
                 </label>
                 <textarea className="therapist-bio-div" placeholder="Enter a Short Biography" cols="30" rows="5"></textarea>   
                 <div class="wrap" style={{marginTop: '20px'}} onClick={this.click} /*onClick={() => this.props.register('hi@gmail.com', 'fuck')}*/>
-                    <button className="button" onClick={this.signup}>Register</button>
+                    <Link to="/Chat">
+                        <button className="button" onClick={this.submit}>Register</button>
+                    </Link>
                 </div>
             </div>
         )

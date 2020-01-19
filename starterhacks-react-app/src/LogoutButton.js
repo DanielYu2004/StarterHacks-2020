@@ -1,5 +1,6 @@
 import React from 'react';
 import fire from './Fire';
+import {Link} from 'react-router-dom'
 import './LogoutButton.css'
 
 class LogoutButton extends React.Component{
@@ -23,7 +24,9 @@ class LogoutButton extends React.Component{
     render(){
         return(
             <div className="logout-button-div">
-                <button onClick={this.signout} id="logout-button" className="button"> Logout</button>
+                <Link to="/">
+                  <button onClick={this.signout} id="logout-button" className="button"> Logout</button>
+                </Link>
             </div>
         )
     }

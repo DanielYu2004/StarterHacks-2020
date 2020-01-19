@@ -46,7 +46,6 @@ class three extends React.Component{
                     <ThreeCard uid={this.state.therapist1}></ThreeCard>
                     <ThreeCard uid={this.state.therapist2}></ThreeCard>
                     <ThreeCard uid={this.state.therapist3}></ThreeCard>
-
                 </div>
             </div>
         )
