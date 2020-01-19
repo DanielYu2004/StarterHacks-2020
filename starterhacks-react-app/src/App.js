@@ -11,6 +11,7 @@ import two from './Pages/2'
 import three from './Pages/3';
 import four from './Pages/4'
 import five from './Pages/5'
+import ChatBox from './Pages/Chat';
 
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
                 <Route exact path='/4' component={four}></Route>
                 <Route exact path='/5' component={five}></Route>
                 <Route path="/register" component={Loggedin}></Route>
+                <Route path="/Chat" component={ChatBox}></Route>
               </Switch>
             </div>
             : 

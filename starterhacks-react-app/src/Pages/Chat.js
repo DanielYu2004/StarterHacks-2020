@@ -8,7 +8,7 @@ class ChatBox extends React.Component {
         super(props);
         this.send = this.send.bind(this);
         this.state = {
-            otherUid: "IYyxNyzMS2fEV2VppTXB9fiOmYR2",
+            otherUid: "",
             uid: "",
             messages: []
         };
@@ -30,6 +30,13 @@ class ChatBox extends React.Component {
                     // console.log(this.state.messages);
                 });
             }
+        }
+        if (possibleUid !== '') {
+            fire.database().ref("users/" + possibleUid + "/therapist").once("value", therapist => {
+                if (therapist !== true){
+                    this.setState({otherUid: therapist})
+                }
+            });
         }
     }
 
@@ -84,6 +91,7 @@ class ChatBox extends React.Component {
     render() {
         return(
             <div>
+                <text text={this.state.messages}></text>
                 <input class="message" placeholder="Enter Your Message..." required/>
                 <button class="button" onClick={this.send}>send</button>
             </div>
