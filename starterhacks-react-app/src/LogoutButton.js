@@ -1,5 +1,6 @@
 import React from 'react';
 import fire from './Fire';
+import './LogoutButton.css'
 
 class LogoutButton extends React.Component{
     constructor(props) {
@@ -20,8 +21,8 @@ class LogoutButton extends React.Component{
     }
     render(){
         return(
-            <div>
-                <button onClick={this.signout}>Logout</button>
+            <div className="logout-button-div">
+                <button onClick={this.signout} id="logout-button" className="button"> Logout</button>
             </div>
         )
     }

@@ -5,7 +5,8 @@ import Register from './Pages/Register';
 import './App.css';
 import fire from './Fire.js'
 import LogoutButton from './LogoutButton.js'
-
+import Loggedin from './Pages/Loggedin'
+import one from './Pages/1'
 class App extends Component {
   constructor() {
     super();
@@ -32,18 +33,29 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div>
         <BrowserRouter>
             {this.state.user ? 
-            <div> logged in </div> : 
+            <div className="logged-in-body">
+              <LogoutButton></LogoutButton>
+              <Switch>
+                <Route exact path='/1' component={one}></Route>
+                <Route path="/register" component={Loggedin}></Route>
+              </Switch>
+            </div>
+            : 
             <Switch>
-              <Route path='/register' component={Register}></Route>
+              <Route   
+               exact path='/register' 
+              component={Register}
+              ></Route>
               <Route path='/' component={Login}></Route>
+
             </Switch>
-            }
+            } 
         </BrowserRouter>
-        <LogoutButton></LogoutButton>
       </div>
     );
   }

@@ -9,9 +9,20 @@ class Register extends React.Component{
         this.signup = this.signup.bind(this);
         this.state = {
           email: '',
-          password: ''
+          password: '',
+          user: ''
         };
+        fire.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log('This is the user: ', user)
+                this.setState = {'user': user}
+            } else {
+                // No user is signed in.
+                console.log('There is no logged in user');
+            }
+        });
       }
+
 
     signup(e){
     e.preventDefault();
@@ -20,12 +31,30 @@ class Register extends React.Component{
     var Password2 = document.getElementsByClassName('field__input a-field__input')[2].value;
 
     if (Password == Password2){
+        
         fire.auth().createUserWithEmailAndPassword(Email, Password).then((u)=>{
         }).then((u)=>{console.log(u)})
         .catch((error) => {
             console.log(error);
             alert(error)
-            })
+        })
+        fire.auth().onAuthStateChanged((user) => {
+            console.log(user);
+            if (user) {
+                fire.database().ref('users/' + user.uid).set({
+                    uid: user.uid,
+                    email: user.email,
+                    therapist: '',
+                    chatlog: [],
+                    symptoms: []
+                });
+            } else {
+              this.setState({ user: null });
+              localStorage.removeItem('user');
+            }
+          });
+
+          
     }else{
         alert("Passwords don't match");
         console.log(Password, Password2)
@@ -56,9 +85,13 @@ class Register extends React.Component{
                     </span>
                 </label>
                 <Link to="/login" style={{ textDecoration: 'none', color: 'white', fontSize: '15px' }} className="register-link-button"> Back to Login</Link>
+
                 <div class="wrap" /*onClick={() => this.props.register('hi@gmail.com', 'fuck')}*/>
-                    <button class="button" onClick={this.signup}>Submit</button>
+                    <button className="button" onClick={this.signup}>Register</button>
                 </div>
+
+
+
             </div>
         </div>
         )
