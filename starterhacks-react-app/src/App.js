@@ -8,7 +8,7 @@ import LogoutButton from './LogoutButton.js'
 import Loggedin from './Pages/Loggedin'
 import one from './Pages/1'
 import two from './Pages/2'
-import three from './Pages/3'
+import three from './Pages/3';
 
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
     fire.auth().onAuthStateChanged((user) => {
       console.log(user);
       if (user) {
-        this.setState({ user });
+        this.setState({user: user});
         localStorage.setItem('user', user.uid);
       } else {
         this.setState({ user: null });

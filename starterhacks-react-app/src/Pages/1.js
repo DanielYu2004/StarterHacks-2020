@@ -1,6 +1,8 @@
 import React from 'react';
 import './1.css';
 import {Link} from 'react-router-dom'
+import fire from "../Fire";
+
 class one extends React.Component{
     render(){
         return(
