@@ -33,17 +33,6 @@
     margin-right: 100px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .field{
     --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, grey);
     color: white;
