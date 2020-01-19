@@ -43,7 +43,7 @@ class Login extends React.Component{
                     <Link to="/register" style={{ textDecoration: 'none', color: 'white', fontSize: '15px' }} className="register-link-button"> Register</Link>
                     <div class="wrap">
                         <Link to="/Chat">
-                        <button class="button" onClick={this.login}>Login</button>
+                            <button class="button" onClick={this.login}>Login</button>
                         </Link>
                     </div>
                 </div>

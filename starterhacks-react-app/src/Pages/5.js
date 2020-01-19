@@ -1,6 +1,12 @@
 import React from 'react';
 import './5.css'
 class five extends React.Component{
+
+    click(event){
+        var file = (event.target.files)
+        console.log(file)
+    }
+
     render(){
         return(
             <div className="therapist-settings">
@@ -17,7 +23,10 @@ class five extends React.Component{
                     <span class="a-field__label">Last Name</span>
                     </span>
                 </label>
-                <textarea className="therapist-bio-div" width="50px"></textarea>   
+                <textarea className="therapist-bio-div" placeholder="Enter a Short Biography" cols="30" rows="5"></textarea>   
+                <div class="wrap" style={{marginTop: '20px'}} onClick={this.click} /*onClick={() => this.props.register('hi@gmail.com', 'fuck')}*/>
+                    <button className="button" onClick={this.signup}>Register</button>
+                </div>
             </div>
         )
     }
