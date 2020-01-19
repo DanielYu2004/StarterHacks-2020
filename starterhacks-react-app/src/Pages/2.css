@@ -14,7 +14,9 @@
 .symptoms-div{
     width: 90%;
     height: 400px;
-    background: blue;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
 }
 .two-div{
     display: flex;
@@ -22,3 +24,6 @@
     justify-content: center;
     align-items: center;
 }
+
+
+
