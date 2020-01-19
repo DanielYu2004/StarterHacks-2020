@@ -9,6 +9,8 @@ import Loggedin from './Pages/Loggedin'
 import one from './Pages/1'
 import two from './Pages/2'
 import three from './Pages/3';
+import four from './Pages/4'
+import five from './Pages/5'
 
 
 class App extends Component {
@@ -48,7 +50,8 @@ class App extends Component {
                 <Route exact path='/1' component={one}></Route>
                 <Route exact path='/2' component={two}></Route>
                 <Route exact path='/3' component={three}></Route>
-                <Route exact path='/4' component={one}></Route>
+                <Route exact path='/4' component={four}></Route>
+                <Route exact path='/5' component={five}></Route>
                 <Route path="/register" component={Loggedin}></Route>
               </Switch>
             </div>

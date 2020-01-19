@@ -12,7 +12,7 @@ class one extends React.Component{
                     <Link to="/2" style={{ textDecoration: 'none', color: 'white'}} class="wrap1">
                         <button class="button1" onClick={this.login}>Yes</button>
                     </Link>
-                    <Link to="/3" style={{ textDecoration: 'none', color: 'white' }} class="wrap11">
+                    <Link to="/4" style={{ textDecoration: 'none', color: 'white' }} class="wrap11">
                         <button class="button11" onClick={this.login}>No</button>
                     </Link>
                 </div>

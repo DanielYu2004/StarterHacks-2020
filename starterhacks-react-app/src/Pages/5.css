@@ -1,0 +1,9 @@
+.therapist-settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.therapist-bio-div{
+    margin-top: 10px;
+}
