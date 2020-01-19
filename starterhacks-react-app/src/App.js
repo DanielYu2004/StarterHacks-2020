@@ -38,11 +38,13 @@ class App extends Component {
         <BrowserRouter>
             {this.state.user ? 
             <div> logged in </div> : 
-            <ChatBox uid={this.state.user.uid} ></ChatBox>>
-            <Switch>
-              <Route path='/register' component={Register}></Route>
-              <Route path='/' component={Login}></Route>
-            </Switch>
+            <div>
+              <ChatBox></ChatBox>
+              <Switch>
+                <Route path='/register' component={Register}></Route>
+                <Route path='/' component={Login}></Route>
+              </Switch>
+            </div>           
             } 
         </BrowserRouter>
         <LogoutButton></LogoutButton>

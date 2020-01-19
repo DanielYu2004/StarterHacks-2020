@@ -6,7 +6,6 @@ class ChatBox extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            uid: fire.auth().currentUser,
             otherUid: "",
             incoming: [],
             outgoing: []
@@ -14,28 +13,34 @@ class ChatBox extends React.Component {
     }
 
     render() {
-        fire.database().ref('starter-ba2c5/users/' + this.state.uid + "/sent").on('child_added', function(childSnapshot, prevChildKey) {
-            if (childSnapshot.child("/to").val == this.state.otherUid){
+        fire.auth().onAuthStateChanged((user) => {
+            console.log(user);
+            if (user) {
+              fire.database().ref('starter-ba2c5/users/' + user.uid + "/sent").on('child_added', function(childSnapshot, prevChildKey) {
+            if (childSnapshot.child("/to").val() == this.state.otherUid){
                 this.setState(prevState => {
                     prevState.outgoing.push(childSnapshot.child("message"));
                 });
                 // this.state.outgoing.push(childSnapshot.child("message"));
             }
         });
-        fire.database().ref('starter-ba2c5/users/' + this.state.otherUid + "/sent").on("child_added", function(childSnapshot, prevChildKey) {
-            if (childSnapshot.child("/to").val == this.state.uid){
+        fire.database().ref('starter-ba2c5/users/' + user.uid + "/sent").on("child_added", function(childSnapshot, prevChildKey) {
+            if (childSnapshot.child("/to").val() == user.uid){
                 this.setState(prevState => {
                     prevState.incoming.push(childSnapshot.child("message"));
                 });
                 // this.state.incoming.push(childSnapshot.child("message"));
             }
         });
-        console.log(this.state.incoming);
-        console.log(this.state.outoing);
+            }
+          });
+          
+        console.log(this.state.incoming, "incoming");
+        console.log(this.state.outoing, "outgoing");
         return(
-            <dif>
+            <div>
 
-            </dif>
+            </div>
         );
     }
 }
